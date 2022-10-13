@@ -28,19 +28,17 @@ MULTI_LINE_STRING = """
  """
 
 def score_checker(score):
-    if(score => 90):
-        print("Grade A")
-    elif(score => 70):
-        print("Grade B")
-    elif(score => 40):
-        print("Grade C")
-    else: print("Learn is The Best Way!")
+    if type(score) == int:
+        if score >= 90:
+            print("Grade A")
+        elif score >= 70:
+            print("Grade B")
+        elif score >= 40:
+            print("Grade C")
+        else:
+            print("Learn is The Best Way!")
+    else:
+        print("Please Input Number!")
 
 
-
-
-
-
-
-
-
+score_checker(40)
