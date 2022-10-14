@@ -27,6 +27,7 @@ MULTI_LINE_STRING = """
  String by Python!
  """
 
+
 def score_checker(score):
     if type(score) == int:
         if score >= 90:
@@ -42,3 +43,10 @@ def score_checker(score):
 
 
 score_checker(40)
+
+
+# Lists
+my_arr = ["Pizza", "Spaghetti", "Bakwan"]
+my_second_arr = ["Sushi", "Nasi Goreng"]
+my_combined_array = my_arr + my_second_arr
+print(my_combined_array, "Get One From arr: " + my_combined_array[2])
