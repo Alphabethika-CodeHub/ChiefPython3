@@ -44,9 +44,92 @@ def score_checker(score):
 
 score_checker(40)
 
-
 # Lists
+print("")
 my_arr = ["Pizza", "Spaghetti", "Bakwan"]
 my_second_arr = ["Sushi", "Nasi Goreng"]
 my_combined_array = my_arr + my_second_arr
 print(my_combined_array, "Get One From arr: " + my_combined_array[2])
+
+# 2D Array
+my_last_grade_book = [["Math", 90], ["Arts", 90]]
+grade_book = [["IPA", 90], ["Fisika", 90], ["English", 90]]
+final_grade_book = my_last_grade_book + grade_book
+popped_grade_book = final_grade_book.pop()
+final_grade_book.insert(10, ["Religion", 90])
+print(final_grade_book)
+
+# Using :n For Array
+suitcase = ["shirt", "shirt", "pants", "pants", "pajamas", "books"]
+beginning = suitcase[0:2]
+middle = suitcase[2:4]
+print(middle)
+
+# List Comprehensions
+grades = [90, 88, 62, 76, 74, 89, 48, 57]
+scaled_grades = [grade + 10 for grade in grades]
+print(scaled_grades)
+
+com_numbers = [2, -1, 79, 24, -50, 4]
+double_com_numbers = [num ** 2 if num <= 0 else num * 3 for num in com_numbers]
+print(double_com_numbers)
+
+# Carly's Clippers
+hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
+prices = [30, 25, 40, 20, 20, 35, 50, 35]
+last_week = [2, 3, 5, 8, 4, 4, 6, 2]
+total_price = 0
+total_revenue = 0
+for price in prices:
+    total_price += price
+
+average_price = total_price / len(prices)
+print("Average Haircut Price: " + str(average_price))
+
+new_prices = [price - 5 for price in prices]
+print(new_prices)
+
+for i in range(len(hairstyles)):
+    total_revenue += prices[i] * last_week[i]
+
+print("Total Revenue: " + str(total_revenue))
+average_daily_revenue = total_revenue / 7
+print("Average Revenue: " + str(average_daily_revenue))
+cuts_under_30 = [new_prices[i] for i in range(len(new_prices)) if prices[i] < 30]
+print(cuts_under_30)
+
+# Kinda Tricky
+heights = [161, 164, 156, 144, 158, 170, 163, 163, 157]
+can_ride_coaster = [num for num in heights if num > 161]
+print(can_ride_coaster)
+
+# Functions With Strings
+# def (Definition) Known as Function Header
+authors = "Audre Lorde,Gabriela Mistral,Jean Toomer,An Qi,Walt Whitman,Shel Silverstein,Carmen Boullosa,Kamala Suraiyya,Langston Hughes,Adrienne Rich,Nikki Giovanni"
+author_names = authors.split(",")
+separated_author_name = []
+
+
+def seperated_names(author_names):
+    for name in author_names:
+        separated_author_name.append(name.split(" "))
+
+
+print("Length Author Names: ", len(author_names))
+print("Length Separated Author Names: ", len(separated_author_name))
+
+
+def get_last_name(separated_author_name):
+    index = 0
+    name = []
+    length_of_author = len(separated_author_name)
+    while index <= length_of_author - 1:
+        removed = separated_author_name[index].pop(-1)
+        name.append(removed)
+        index += 1
+    return name
+
+
+seperated_names(author_names)
+author_last_names = get_last_name(separated_author_name)
+print("Get The Last Name of Author: " + str(author_last_names))
