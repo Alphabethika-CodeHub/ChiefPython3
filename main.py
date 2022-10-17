@@ -105,7 +105,8 @@ print(can_ride_coaster)
 
 # Functions With Strings
 # def (Definition) Known as Function Header
-authors = "Audre Lorde,Gabriela Mistral,Jean Toomer,An Qi,Walt Whitman,Shel Silverstein,Carmen Boullosa,Kamala Suraiyya,Langston Hughes,Adrienne Rich,Nikki Giovanni"
+authors = "Audre Lorde,Gabriela Mistral,Jean Toomer,An Qi,Walt Whitman,Shel Silverstein,Carmen Boullosa," \
+          "Kamala Suraiyya,Langston Hughes,Adrienne Rich,Nikki Giovanni "
 author_names = authors.split(",")
 separated_author_name = []
 
@@ -133,3 +134,48 @@ def get_last_name(separated_author_name):
 seperated_names(author_names)
 author_last_names = get_last_name(separated_author_name)
 print("Get The Last Name of Author: " + str(author_last_names))
+
+reapers_line_one_words = ["Black", "reapers", "with", "the", "sound", "of", "steel", "on", "stones"]
+reapers_line_one = ' '.join(reapers_line_one_words)
+print(reapers_line_one)
+
+
+# Javascript Ternary Alike
+def poem_description(publishing_date, author, title, original_work):
+    poem_desc = "The poem {title} by {author} was originally published in {original_work} in {publishing_date}.".format(
+        publishing_date=publishing_date, author=author, title=title, original_work=original_work)
+    return poem_desc
+
+
+my_beard_description = poem_description(author="Shel Silverstein", title="My Beard",
+                                        original_work="Where the Sidewalk Ends", publishing_date="1974")
+
+# Review String Method
+highlighted_poems = "Afterimages:Audre Lorde:1997,  The Shadow:William Carlos Williams:1915, Ecstasy:Gabriela Mistral:1925,   Georgia Dusk:Jean Toomer:1923,   Parting Before Daybreak:An Qi:2014, The Untold Want:Walt Whitman:1871, Mr. Grumpledump's Song:Shel Silverstein:2004, Angel Sound Mexico City:Carmen Boullosa:2013, In Love:Kamala Suraiyya:1965, Dream Variations:Langston Hughes:1994, Dreamwood:Adrienne Rich:1987"
+
+highlighted_poems_list = highlighted_poems.split(",")
+highlighted_poems_stripped = []
+for letter in highlighted_poems_list:
+    highlighted_poems_stripped.append(letter.strip())
+
+highlighted_poems_details = []
+for letter in highlighted_poems_stripped:
+    highlighted_poems_details.append(letter.split(":"))
+
+titles = []
+poets = []
+dates = []
+for letter in highlighted_poems_details:
+    titles.append(letter[0])
+    poets.append(letter[1])
+    dates.append(letter[2])
+
+# print("Titles " + str(len(titles)))
+# print("Poets " + str(len(poets)))
+# print("Dates " + str(len(dates)))
+# print("Highlighted " + str(len(highlighted_poems_details)))
+index = 0
+
+for letter in highlighted_poems_details:
+    print("The poem {} was published by {} in {}".format(titles[index], poets[index], dates[index]))
+    index += 1
