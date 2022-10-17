@@ -179,3 +179,6 @@ index = 0
 for letter in highlighted_poems_details:
     print("The poem {} was published by {} in {}".format(titles[index], poets[index], dates[index]))
     index += 1
+
+# Importing
+# from matplotlib import pyplot as plt
