@@ -150,35 +150,5 @@ def poem_description(publishing_date, author, title, original_work):
 my_beard_description = poem_description(author="Shel Silverstein", title="My Beard",
                                         original_work="Where the Sidewalk Ends", publishing_date="1974")
 
-# Review String Method
-highlighted_poems = "Afterimages:Audre Lorde:1997,  The Shadow:William Carlos Williams:1915, Ecstasy:Gabriela Mistral:1925,   Georgia Dusk:Jean Toomer:1923,   Parting Before Daybreak:An Qi:2014, The Untold Want:Walt Whitman:1871, Mr. Grumpledump's Song:Shel Silverstein:2004, Angel Sound Mexico City:Carmen Boullosa:2013, In Love:Kamala Suraiyya:1965, Dream Variations:Langston Hughes:1994, Dreamwood:Adrienne Rich:1987"
-
-highlighted_poems_list = highlighted_poems.split(",")
-highlighted_poems_stripped = []
-for letter in highlighted_poems_list:
-    highlighted_poems_stripped.append(letter.strip())
-
-highlighted_poems_details = []
-for letter in highlighted_poems_stripped:
-    highlighted_poems_details.append(letter.split(":"))
-
-titles = []
-poets = []
-dates = []
-for letter in highlighted_poems_details:
-    titles.append(letter[0])
-    poets.append(letter[1])
-    dates.append(letter[2])
-
-# print("Titles " + str(len(titles)))
-# print("Poets " + str(len(poets)))
-# print("Dates " + str(len(dates)))
-# print("Highlighted " + str(len(highlighted_poems_details)))
-index = 0
-
-for letter in highlighted_poems_details:
-    print("The poem {} was published by {} in {}".format(titles[index], poets[index], dates[index]))
-    index += 1
-
 # Importing
 # from matplotlib import pyplot as plt
