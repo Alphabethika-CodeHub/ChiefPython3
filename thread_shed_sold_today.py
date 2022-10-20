@@ -188,6 +188,8 @@ for thread in thread_sold:
     for list_of_thread in splitted_thread:
         thread_sold_split.append(list_of_thread)
 
+print(thread_sold_split)
+
 # Removes Duplicated in thread_sold_split Variable.
 arr_of_base_colors = list(dict.fromkeys(thread_sold_split))
 
