@@ -53,7 +53,7 @@ print(my_combined_array, "Get One From arr: " + my_combined_array[2])
 
 # 2D Array
 my_last_grade_book = [["Math", 90], ["Arts", 90]]
-grade_book = [["IPA", 90], ["Fisika", 90], ["English", 90]]
+grade_book = [["IPA", 90], ["Physics", 90], ["English", 90]]
 final_grade_book = my_last_grade_book + grade_book
 popped_grade_book = final_grade_book.pop()
 final_grade_book.insert(10, ["Religion", 90])
