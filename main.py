@@ -1,4 +1,6 @@
 import math
+import os
+import zipfile
 
 myInt = 4
 myFloat = 5.0
@@ -30,18 +32,22 @@ MULTI_LINE_STRING = """
 
 def score_checker(score):
     if type(score) == int:
-        if score >= 90:
-            print("Grade A")
-        elif score >= 70:
-            print("Grade B")
-        elif score >= 40:
+        if score >= 40:
             print("Grade C")
+        elif score >= 80:
+            print("Grade B")
+        elif score >= 90:
+            print("Grade A")
         else:
             print("Learn is The Best Way!")
     else:
         print("Please Input Number!")
 
+# Switch Statement Only Support at Python ^3.10
+# def score_checker_switch(score):
+    # match score
 
+print("Using if Statement")
 score_checker(40)
 
 # Lists
@@ -72,7 +78,7 @@ print(scaled_grades)
 
 com_numbers = [2, -1, 79, 24, -50, 4]
 double_com_numbers = [num ** 2 if num <= 0 else num * 3 for num in com_numbers]
-print(double_com_numbers)
+print("double_com_numbers", double_com_numbers)
 
 # Carly's Clippers
 hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
@@ -152,3 +158,9 @@ my_beard_description = poem_description(author="Shel Silverstein", title="My Bea
 
 # Importing
 # from matplotlib import pyplot as plt
+
+# Read Microsoft Office
+myDocument = zipfile.ZipFile(os.getcwd() + "\\uploads\\Test Soal.docx")
+print(os.getcwd() + "\\uploads\\Test Soal.docs")
+print(myDocument.read())
+
